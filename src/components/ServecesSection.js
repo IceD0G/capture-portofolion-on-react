@@ -1,16 +1,21 @@
 import React from 'react';
+
 //impor icons
 import clock from '../img/clock.svg';
 import diaphragm from '../img/diaphragm.svg';
 import money from '../img/money.svg';
 import teamwork from '../img/teamwork.svg';
 import home2 from '../img/home2.png';
+
+//Stylse
 import { About, Description, Image } from '../styles';
 import styled from 'styled-components';
-
+import { scrollReval } from '../animation';
+import { useScroll } from './useScroll';
 const ServecesSection = () => {
+	const [element, controls] = useScroll();
 	return (
-		<Services>
+		<Services variants={scrollReval} animate={controls} ref={element}>
 			<Description>
 				<h2>
 					High <span>quality</span> services
